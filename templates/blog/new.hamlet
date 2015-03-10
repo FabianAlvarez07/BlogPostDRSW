@@ -1,0 +1,6 @@
+<h1>Post new article
+
+<form method=post action=@{BlogPostNewR} entype=#{encoding}>
+    ^{widget}
+    <button .btn .btn-default>
+        New

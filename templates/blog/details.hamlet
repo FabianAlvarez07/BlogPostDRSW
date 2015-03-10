@@ -1,0 +1,6 @@
+<h1>#{blogPostTitle blogPost}
+
+<div .jumbotron>
+    #{blogPostArticle blogPost}
+<a href=@{HomeR} .btn .btn-default>
+    Index

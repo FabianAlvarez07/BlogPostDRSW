@@ -1,0 +1,9 @@
+<h1>Articles
+
+<a href=@{BlogPostNewR} .btn .btn-default>
+   New Post
+<div .jumbotron>
+   <ul>
+       $forall Entity bId article <- articles
+           <li>
+               <a href=@{BlogPostR bId}>#{blogPostTitle article}

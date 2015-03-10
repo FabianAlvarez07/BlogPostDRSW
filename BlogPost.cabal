@@ -21,6 +21,7 @@ library
                      Settings.StaticFiles
                      Handler.Common
                      Handler.Home
+                     Handler.BlogPost
 
     if flag(dev) || flag(library-only)
         cpp-options:   -DDEVELOPMENT
@@ -80,6 +81,8 @@ library
                  , containers
                  , vector
                  , time
+                 , yesod-text-markdown           >= 0.1.7      && < 0.2
+                 , markdown                      >= 0.1.13     && < 0.1.14
 
 executable         BlogPost
     if flag(library-only)
