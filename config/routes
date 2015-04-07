@@ -4,6 +4,8 @@
 /favicon.ico FaviconR GET
 /robots.txt RobotsR GET
 
+/subsite SubSiteR HelloSub getHelloSub
+
 / HomeR GET
 /blog/new BlogPostNewR GET POST
 /blog/details/#BlogPostId BlogPostR GET DELETE

@@ -3,8 +3,8 @@ module HelloSub (
        module HelloSub
        ) where
 
-import           HelloSub.Data
-import           Yesod
+import HelloSub.Data
+import Yesod
 import Prelude (IO,($))
 
 -- And we'll spell out the handler type signature.

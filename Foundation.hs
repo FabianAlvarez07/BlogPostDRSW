@@ -9,6 +9,7 @@ import Yesod.Auth.GoogleEmail  (authGoogleEmail)
 import Yesod.Default.Util   (addStaticContentExternal)
 import Yesod.Core.Types     (Logger)
 
+import HelloSub
 -- | The foundation datatype for your application. This can be a good place to
 -- keep settings and values requiring initialization before your application
 -- starts running, such as database connections. Every handler will have
@@ -19,6 +20,7 @@ data App = App
     , appConnPool    :: ConnectionPool -- ^ Database connection pool.
     , appHttpManager :: Manager
     , appLogger      :: Logger
+    , getHelloSUb    :: HelloSub
     }
 
 instance HasHttpManager App where
