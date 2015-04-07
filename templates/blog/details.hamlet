@@ -3,4 +3,4 @@
 <div .jumbotron>
     #{blogPostArticle blogPost}
 <a href=@{HomeR} .btn .btn-default>
-    Index
+    _{MsgIndex}

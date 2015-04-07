@@ -9,6 +9,7 @@ Email
     verkey Text Maybe
     UniqueEmail email
 BlogPost
+    user    UserId default=1
     title   Text
     article Markdown
 

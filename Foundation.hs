@@ -5,6 +5,7 @@ import Database.Persist.Sql (ConnectionPool, runSqlPool)
 import Text.Hamlet          (hamletFile)
 import Text.Jasmine         (minifym)
 import Yesod.Auth.BrowserId (authBrowserId)
+import Yesod.Auth.GoogleEmail  (authGoogleEmail)
 import Yesod.Default.Util   (addStaticContentExternal)
 import Yesod.Core.Types     (Logger)
 
@@ -22,6 +23,8 @@ data App = App
 
 instance HasHttpManager App where
     getHttpManager = appHttpManager
+
+mkMessage "App" "messages" "es"
 
 -- This is where we define all of the routes in our application. For a full
 -- explanation of the syntax, please see:
@@ -59,6 +62,7 @@ instance Yesod App where
         -- you to use normal widget features in default-layout.
 
         pc <- widgetToPageContent $ do
+            addScriptRemote "http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"
             addStylesheet $ StaticR css_bootstrap_css
             $(widgetFile "default-layout")
         withUrlRenderer $(hamletFile "templates/default-layout-wrapper.hamlet")
@@ -131,7 +135,7 @@ instance YesodAuth App where
                     }
 
     -- You can add other plugins like BrowserID, email or OAuth here
-    authPlugins _ = [authBrowserId def]
+    authPlugins _ = [authBrowserId def, authGoogleEmail]
 
     authHttpManager = getHttpManager
 

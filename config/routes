@@ -6,4 +6,5 @@
 
 / HomeR GET
 /blog/new BlogPostNewR GET POST
-/blog/!#BlogPostId BlogPostR GET 
+/blog/details/#BlogPostId BlogPostR GET DELETE
+/blog/edit/#BlogPostId BlogPostUpdateR GET POST

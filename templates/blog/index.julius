@@ -1,0 +1,11 @@
+
+
+function deleteBlog(deleteUrl) {
+    $.ajax({
+         type: "DELETE",
+         url: deleteUrl,
+         success: function(html){
+              location.reload(); 
+         }
+     });
+}

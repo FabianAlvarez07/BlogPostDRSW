@@ -13,6 +13,10 @@ import Yesod.Form.Bootstrap3 (BootstrapFormLayout (..), renderBootstrap3,
 -- inclined, or create a single monolithic file.
 getHomeR :: Handler Html
 getHomeR = do
-      articles <- runDB $ selectList [] [Desc BlogPostId]
+      mid <- maybeAuthId
+      articles <- runDB $ 
+                  case mid of
+                       Nothing -> selectList [] [Desc BlogPostId]
+                       Just uid -> selectList [BlogPostUser ==. uid] [Desc BlogPostId]
       defaultLayout $ do
          $(widgetFile "blog/index")

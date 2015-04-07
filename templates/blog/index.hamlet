@@ -1,9 +1,19 @@
-<h1>Articles
+<h1>_{MsgArticles}
 
 <a href=@{BlogPostNewR} .btn .btn-default>
-   New Post
+   _{MsgNewArticle}
+
+<div>
+   $maybe id <- mid
+      <a href=@{AuthR LogoutR} .btn .btn-default>_{MsgLogout}
+   $nothing
+      <a href=@{AuthR LoginR} .btn .btn-default>_{MsgLogin}
 <div .jumbotron>
    <ul>
        $forall Entity bId article <- articles
            <li>
                <a href=@{BlogPostR bId}>#{blogPostTitle article}
+               <button onclick=deleteBlog('@{BlogPostR bId}') .btn .btn-default>
+                  _{MsgMyDelete}
+               <a href=@{BlogPostUpdateR bId} .btn .btn-default>
+                  _{MsgUpdate}
