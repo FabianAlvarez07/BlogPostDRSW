@@ -12,3 +12,4 @@ NewArticle: Crear un articulo nuevo
 Title: Título
 Article: Artículo
 Articles: Artículos
+Subsite: Subsitio

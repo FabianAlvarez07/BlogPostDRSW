@@ -1,3 +1,9 @@
+-- @HelloSub.hs
+{-# LANGUAGE FlexibleInstances     #-}
+{-# LANGUAGE MultiParamTypeClasses #-}
+{-# LANGUAGE OverloadedStrings     #-}
+{-# LANGUAGE QuasiQuotes           #-}
+{-# LANGUAGE TemplateHaskell       #-}
 module HelloSub (
        module HelloSub.Data,
        module HelloSub

@@ -3,6 +3,8 @@
 <a href=@{BlogPostNewR} .btn .btn-default>
    _{MsgNewArticle}
 
+<a href=@{SubSiteR SubHomeR}>_{MsgSubsite}
+
 <div>
    $maybe id <- mid
       <a href=@{AuthR LogoutR} .btn .btn-default>_{MsgLogout}

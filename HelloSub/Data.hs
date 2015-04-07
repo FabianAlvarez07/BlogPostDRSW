@@ -1,9 +1,17 @@
+
+-- @HelloSub/Data.hs
+{-# LANGUAGE QuasiQuotes     #-}
+{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE TypeFamilies    #-}
 module HelloSub.Data where
 
-import Yesod
+import           Yesod
 
+-- Subsites have foundations just like master sites.
 data HelloSub = HelloSub
 
-mkYesodSubData "HelloSub" [parseRoutes]
-/SubHomeR GET
+-- We have a familiar analogue from mkYesod, with just one extra parameter.
+-- We'll discuss that later.
+mkYesodSubData "HelloSub" [parseRoutes|
+/ SubHomeR GET
 |]

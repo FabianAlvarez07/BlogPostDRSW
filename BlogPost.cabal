@@ -23,6 +23,8 @@ library
                      Handler.Home
                      Handler.BlogPost
                      Handler.BlogPostUpdate
+                     HelloSub
+                     HelloSub.Data
 
     if flag(dev) || flag(library-only)
         cpp-options:   -DDEVELOPMENT
